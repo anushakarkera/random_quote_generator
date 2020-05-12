@@ -14,6 +14,7 @@ export const addQuoteAction = () => {
           console.log(data);
 
         setTimeout(() => {
+          //get random quote
             let index = Math.floor(Math.random() * data.length);
             let payload = data[index];
             dispatch(fetchSucess(payload));
