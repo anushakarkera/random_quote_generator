@@ -7,17 +7,15 @@ export const addQuoteAction = () => {
     return dispatch => {
         dispatch(fetchingStatrted());
         axios
-      .get(`https://type.fit/api/quotes`)
+      .get(`https://api.quotable.io/random`)
       .then(res => {
-          console.log(res)
-          let data = res.data;
-          console.log(data);
-
+        let data = {
+          "text":res.data.content,
+          "author":res.data.author
+        };
         setTimeout(() => {
           //get random quote
-            let index = Math.floor(Math.random() * data.length);
-            let payload = data[index];
-            dispatch(fetchSucess(payload));
+            dispatch(fetchSucess(data));
       
     }, 2500);
       })
