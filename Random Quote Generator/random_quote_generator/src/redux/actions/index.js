@@ -1,4 +1,3 @@
-import getquote from '../../services/quoteservice'
 
 import axios from 'axios';
 
