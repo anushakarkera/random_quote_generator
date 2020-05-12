@@ -25,5 +25,6 @@ class Filter extends React.Component {
 }
 
 export default connect(
+  null,
     mapDispatchToProps
   )(Filter);
